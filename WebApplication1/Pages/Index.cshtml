@@ -1,0 +1,20 @@
+﻿
+
+
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">User Lookup</h1>
+    <form method="post">
+        <input type="text" name="sAMAccountName" placeholder="Enter sAMAccountName" required />
+        <button type="submit">OK</button>
+    </form>
+    @if (Model.UserExists)
+    {
+        <a href="/?userName=@Model.sAMAccountName">Change Expiration Date. Add 7 days from today !!!!</a>
+    }
+</div>
